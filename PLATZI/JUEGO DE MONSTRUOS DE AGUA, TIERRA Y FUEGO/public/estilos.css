@@ -31,6 +31,7 @@ caracteristicas de ambas anteriores*/
 
 .titulo{
     color: #FFB200;
+    font-size: 32px;
 }
 
 .subtitulo{
@@ -46,7 +47,6 @@ padre y un h1 puede ser hijo por ejemplo)*/
     display: flex;
     /*con flex direction column los ponemos en vertical*/
     flex-direction: column;
-    justify-content: center;
     /*100vh nos centra a proporcion del tamaño visible en ese momento (este
     caso de forma vertical)*/
     height: 100vh;
@@ -173,11 +173,12 @@ input:checked + label{
     color: white;
 }
 
-@media (max-width: 560px){
-    .tarjetas, .botones-ataques{
+@media (max-width: 500px){
+    .tarjetas, .botones-ataques, .titulo, .subtitulo{
         flex-direction: column;
     }
 }
+
 
 #ver-mapa {
     flex-direction: column;
@@ -207,3 +208,10 @@ input:checked + label{
     }
 }
 
+
+.titulo, .subtitulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

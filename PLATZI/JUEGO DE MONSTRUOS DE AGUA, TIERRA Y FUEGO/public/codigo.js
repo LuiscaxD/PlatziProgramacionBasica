@@ -214,11 +214,11 @@ function cargaHtml(){
 }
 
 function unirseAlJuego(){
-    fetch("http://localhost:8080/unirse")
-        .then(function(res){
+    fetch("http://192.168.1.14:8080/unirse")
+        .then((res) =>{
             if(res.ok){
                 res.text()
-                    .then(function(respuesta) {
+                    .then((respuesta) => {
                         console.log(respuesta)
                         jugadorId = respuesta
                     })
@@ -231,7 +231,7 @@ al momento de tocar el boton de seleccionar mascota y mostrar en una alerta el
 nombre de la mascota seleccionada*/ 
 function seleccionarMascota(){
     
-    sectionSeleccionarMascota.style.display = "none"
+
     
  
 /*Aca hacemos que al seleccionar la mascota, tome el nombre de la mascota con
@@ -257,7 +257,9 @@ cambiandole valores al inner con ".innerHTML = mascota-jugador*/
         mascotaJugador = inputPydog.id
     }else{
         alert("Tienes que seleccionar una mascota para continuar")
+        return
     }
+    sectionSeleccionarMascota.style.display = "none"
 
     seleccionarMokepon(mascotaJugador)
 
@@ -268,7 +270,7 @@ cambiandole valores al inner con ".innerHTML = mascota-jugador*/
 }
 
 function seleccionarMokepon(mascotaJugador){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}`, {
+    fetch(`http://192.168.1.14:8080/mokepon/${jugadorId}`, {
        method: "post", 
        headers:{
            "Content-Type": "application/json"
@@ -333,7 +335,7 @@ function secuenciaAtaque(){
 }
 
 function enviarAtaques(){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`, {
+    fetch(`http://192.168.1.14:8080/mokepon/${jugadorId}/ataques`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
@@ -347,7 +349,7 @@ function enviarAtaques(){
 }
 
 function obtenerAtaques(){
-    fetch(`http://localhost:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`http://192.168.1.14:8080/mokepon/${enemigoId}/ataques`)
         .then(function(res){
            if(res.ok){
             res.json()
@@ -500,7 +502,7 @@ function pintarCanvas(){
 }
 
 function enviarPosicion(x,y){
-    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+    fetch(`http://192.168.1.14:8080/mokepon/${jugadorId}/posicion`, {
         method: "post",
         headers: {
             "Content-Type": "application/json"
