@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Poppins:wght@300&display=swap');
+
+body{
+    font-family: "poppins", sans-serif;
+    background-image: url(../assets/wave-haikei.svg);
+    background-size: cover;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+/*este es un selector de clase 
+.titulo{
+    
+}
+*/
+
+/*este es un selector id 
+#titulo{
+
+}
+*/
+
+/*este es un selector de tipo
+h1{
+
+}
+*/
+
+/*El display block ocupa toda la pantalla de izquierda a derecha. ||
+Si ocupa un solo pedazo de pantalla es inline. || El inline-block comparte
+caracteristicas de ambas anteriores*/
+
+.titulo{
+    color: #FFB200;
+}
+
+.subtitulo{
+    color: #FFB200;
+}
+
+/*Flexbox nos alinea nuestros elementos de forma vertical u horizontal 
+con elementos contenedores/padre y elementos hijos (section podria ser un 
+padre y un h1 puede ser hijo por ejemplo)*/
+
+#seleccionar-mascota{
+    /*display flex se mantiene en un valor por defecto horizontal*/
+    display: flex;
+    /*con flex direction column los ponemos en vertical*/
+    flex-direction: column;
+    justify-content: center;
+    /*100vh nos centra a proporcion del tamaño visible en ese momento (este
+    caso de forma vertical)*/
+    height: 100vh;
+    /*align items nos centra de forma horizontal*/
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.tarjetas, .botones-ataques  {
+    display: flex;
+    gap: 10px;
+}
+
+/*Modelo de caja*/
+.tarjeta-de-pokemon{
+    /*Elpaddinghacequeanuestracajasenosdeunespaciadodentrodelacajaperoalmismotiemposeagrandalacajaesos10px*/padding: 5px;
+    /*Elboxsizinhacequenosevitenoseseagrandamientodelacajaysemantengaeneltamañooriginalde100x100px*/box-sizing: border-box;
+    width: 160px;
+    height: 160px;
+    background-color: #FFB200;
+    margin: 15px;
+    border: 1px solid #277BC0;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    color: #277BC0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    
+}
+
+.tarjeta-de-pokemon img{
+    height: 100px;
+    width: 100px;
+}
+
+input{
+    display: none;
+}
+
+input:checked + label{
+   background: rgb(0, 255, 72);
+}
+
+#boton-mascota{
+    margin: 30px 0px 0px 1px;
+    border: 1px solid #008cff;
+    color: black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 170px;
+    height: 30px;
+    font-family: "poppins", sans-serif;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton-de-ataque{
+    background-color: #277BC0;
+    border-radius: 20px;
+    border: 2px solid #ff8800;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    font-family: "poppins", sans-serif;
+    padding: 10px;
+    color: white;
+    box-sizing: border-box;
+}
+
+#mensajes{
+    width: 280px;
+    height: 100px;
+    background-color: #008cff;
+    font-family: "poppins", sans-serif;
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border: 2px solid #ff8800; 
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+}
+
+#boton-reiniciar{
+    border: 2px solid white;
+    background-color: #ff8800;
+    color: white;
+    font-family: "poppins", sans-serif;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.ataques{
+    /*generando las columnas, el grid nos crea las columnas pero la propiedad "grid-template-columns" nos la separa segun la cantidad de hijos que haya dentro de nuestro elemento padre (divs dentro de los divs) en este caso hay 2 asi que se pone 2 valores de 100px*/
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+
+/*Para hacer responsive*/
+.ataques-jugador, .ataques-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+@media (max-width: 560px){
+    .tarjetas, .botones-ataques{
+        flex-direction: column;
+    }
+}
+
+#ver-mapa {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#ver-mapa button{
+    margin: 10px 0;
+    border: 1px solid #008cff;
+    color: black;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 80px;
+    height: 40px;
+    font-family: "poppins", sans-serif;
+}
+
+@media (max-width: 300px){
+    #ver-mapa div{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+}
+
